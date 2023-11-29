@@ -5,13 +5,21 @@ const pacienteSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  idade: {
-    type: Number,
+  dataNascimento: {
+    type: Date,
     required: true,
   },
-  dataCadastro:{
+  dataCadastro: {
     type: Date,
     default: Date.now(),
+    required: true,
+  },
+  // Adicione campos opcionais conforme necessário
+  endereco: {
+    type: String
+  },
+  email: {
+    type: String
   }
 });
 

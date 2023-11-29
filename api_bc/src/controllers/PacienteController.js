@@ -1,8 +1,9 @@
-const Paciente = require('../models/Paciente');
+const Paciente = require ('../models/Paciente');
 
 const PacienteController = {
   getAllPacientes: async (req, res) => {
     try {
+      console.log('Entrou em Pacientes')
       const pacientes = await Paciente.find();
       res.json(pacientes);
     } catch (error) {
@@ -24,6 +25,7 @@ const PacienteController = {
   },
 
   createPaciente: async (req, res) => {
+    console.log("Novo Paciente");
     const newPaciente = new Paciente(req.body);
 
     try {
@@ -35,6 +37,7 @@ const PacienteController = {
   },
 
   updatePaciente: async (req, res) => {
+    console.log("Atualizando Paciente");
     try {
       const updatedPaciente = await Paciente.findByIdAndUpdate(req.params.id, req.body, { new: true });
       res.json(updatedPaciente);
@@ -44,6 +47,7 @@ const PacienteController = {
   },
 
   deletePaciente: async (req, res) => {
+    console.log("Deletando Paciente");
     try {
       await Paciente.findByIdAndDelete(req.params.id);
       res.json({ message: 'Paciente excluído com sucesso' });

@@ -3,6 +3,7 @@ const User = require('../models/User');
 const UserController = {
   getAllUsers: async (req, res) => {
     try {
+      console.log("entrou em User");
       const users = await User.find();
       res.json(users);
     } catch (error) {
