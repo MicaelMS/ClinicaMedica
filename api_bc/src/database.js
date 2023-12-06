@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
-const password = encodeURIComponent('MongoDB@123');
 const port = 3000;
 
 const connectDatabase = async () => {
     try {
-    //   await mongoose.connect(`mongodb+srv://Micael:${password}@cluster0.qf5kkox.mongodb.net/ClinicaSaude`, {});
       await mongoose.connect(`mongodb://localhost:27017/ClinicaSaude`, {});
       
       console.log('MongoDB conectado');

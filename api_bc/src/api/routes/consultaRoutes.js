@@ -4,6 +4,8 @@ const ConsultaController = require('../../controllers/ConsultaController');
 
 router.get('/consultar', ConsultaController.getAllConsulta);
 
+router.post('/reconsulta/:id', ConsultaController.scheduleReconsulta);
+
 router.get('/consulta/:id', ConsultaController.getConsultaById);
 
 router.post('/salvar', ConsultaController.createConsulta);

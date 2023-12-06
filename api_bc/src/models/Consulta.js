@@ -25,8 +25,6 @@ const consultaSchema = new mongoose.Schema({
         required: true
     }
 });
-consultaSchema.index({ dataConsulta: 1 }, { unique: true, expires: '1d' });
-
 
 const Consulta = mongoose.model("Consulta", consultaSchema);
 
